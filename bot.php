@@ -14,8 +14,14 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
+			if($text =='สั่งข้าว'){
+				$text = "หิวมั้ย เมนูพรุ่งนี้มี xxxxxxx";
+			}
+			else if($text == "เช็คคะแนนสะสม"){
+				$text = "คะแนนของคุณคือ   xxx   คะแนน";
+			}
 			$replyToken = $event['replyToken'];
-
+			
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
